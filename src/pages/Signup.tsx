@@ -81,7 +81,9 @@ function Signup() {
         const response = await axios.post(`${api_url}/adminUser`, userInfo);
         toast.success("User registered successfully.");
         console.log("User created:", response.data);
-
+        localStorage.setItem("fname" ,i.firstName)
+        localStorage.setItem("lname", i.lastName)
+        localStorage.setItem("email",i.email)
         navigate("/admin");
       } catch (error) {
         toast.error("Failed to register user.");

@@ -1,4 +1,4 @@
-import {  Home, Users } from "lucide-react"
+import { Home, Users } from "lucide-react";
 
 import {
   Sidebar,
@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 // Menu items.
 const items = [
@@ -24,16 +24,33 @@ const items = [
     title: "User List",
     url: "userList",
     icon: Users,
-  }
-]
+  },
+];
+
+const data = {
+  user: {
+    fname: localStorage.getItem("fname"),
+    lname: localStorage.getItem("lname"),
+    email: localStorage.getItem("email"),
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtrJwdO6KDjQ2W6zUinWeKtyOTNW3wFqP9iJme1Y_sF9CtwzF5R1--B9uICdwXQPM8Z50&usqp=CAU",
+  },
+};
 
 export function AppSidebar() {
   return (
     <Sidebar variant="sidebar">
+      <SidebarHeader>
+        <div className="flex gap-2">
+          <div className="h-15 w-15 rounded-md">
+              <img src={data.user.avatar} alt="" className="h-15 w-15 rounded-md" />
+          </div>
+          <div className="flex flex-col justify-center">
+              <p className="font-medium">{data.user.fname} {data.user.lname}</p>
+              <p className="text-sm text-gray-600">{data.user.email}</p>
+          </div>
+        </div>
+      </SidebarHeader>
       <SidebarContent>
-          <SidebarHeader>
-            this is header
-          </SidebarHeader>
         <SidebarGroup>
           <SidebarGroupLabel>Overview</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -50,10 +67,9 @@ export function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
-
         </SidebarGroup>
       </SidebarContent>
-      <SidebarRail/>
+      <SidebarRail />
     </Sidebar>
-  )
+  );
 }

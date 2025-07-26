@@ -47,7 +47,10 @@ function Signin() {
       if (matchedUser) {
         toast.success("Login successful!");
         console.log("User logged in:", matchedUser);
-        navigate("/admin")
+        localStorage.setItem("fname", matchedUser.firstName);
+        localStorage.setItem("lname", matchedUser.lastName);
+        localStorage.setItem("email", matchedUser.email);
+        navigate("/admin");
       } else {
         toast.error("Invalid email or password.");
       }

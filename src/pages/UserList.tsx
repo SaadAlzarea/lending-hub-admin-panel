@@ -27,10 +27,16 @@ function UserList() {
     },
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return (
+    <div className="flex items-center justify-center max-w-screen min-h-screen">
+      <div>
+        <p>loading ...</p>
+      </div>
+    </div>
+  );
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-screen min-h-screen">
       <p className="text-xl font-bold mb-4">User Info</p>
       <Table>
         <TableHeader>
