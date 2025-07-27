@@ -7,7 +7,7 @@ export default function Landing() {
       <div className="p-4 shadow-2xl rounded-lg flex flex-col gap-6">
         <div className="text-2xl font-bold">
           <p>Admin Panel for Lending Hub</p>
-          <p className="text-sm font-mono text-gray-500">just for test</p>
+          <p className="text-sm font-mono font-medium text-gray-500 text-center" >"This page just for test"</p>
         </div>
         <div>
           <Link to={"signin"}>
