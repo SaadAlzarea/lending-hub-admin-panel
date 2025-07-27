@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Card, CardContent } from "@/components/ui/card";
 import UserList from "@/pages/UserList";
+import Landing from "@/pages/Landing";
 
 function Layout() {
   return (
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <AuthLayout/>,
     children: [
+      { path: "/", element: <Landing /> },
       { path: "/signup", element: <Signup /> },
       { path: "/signin", element: <Signin /> },
     ],
