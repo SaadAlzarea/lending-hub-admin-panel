@@ -12,7 +12,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Card, CardContent } from "@/components/ui/card";
-import UserList from "@/pages/UserList";
+import UserList from "../pages/UserList";
 import Landing from "@/pages/Landing";
 
 function Layout() {

@@ -10,4 +10,5 @@ zod,
 hookform resolvers,
 shadCN,
 shadCN sidebar,
+react-query-devtools
 }
